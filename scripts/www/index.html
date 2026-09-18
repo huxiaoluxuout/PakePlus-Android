@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4f7cff" />
+    <title>局域网文字传输</title>
+    <script type="module" crossorigin src="/assets/index-D0C3mrYK.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DlKNDhoe.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 移动端调试：URL 带 ?debug=1 或 localStorage 标记 lantext:debug 时注入 vConsole -->
+    <script>
+      (function () {
+        var enable = /[?&]debug=1/.test(location.search);
+        try {
+          if (localStorage.getItem('lantext:debug') === '1') enable = true;
+        } catch (e) {}
+        if (!enable) return;
+        var s = document.createElement('script');
+        s.src = '/vconsole.min.js';
+        s.onload = function () {
+          if (window.VConsole) { new window.VConsole(); console.info('[vconsole] 调试面板已启用'); }
+        };
+        document.head.appendChild(s);
+      })();
+    </script>
+  </body>
+</html>
